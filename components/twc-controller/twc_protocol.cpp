@@ -80,7 +80,7 @@ namespace esphome {
                 vTaskDelay(1000/portTICK_PERIOD_MS);
             };
 
-            uint8_t commandNumber = 0;
+            uint8_t commandNumber = 4;
 
             for (;;) {
                 if (twc->ChargersConnected() > 0) {
@@ -113,8 +113,8 @@ namespace esphome {
                         vTaskDelay(1000+random(100,200)/portTICK_PERIOD_MS);
                     }
 
-                    if (commandNumber >= 5) {
-                        commandNumber = 0;
+                    if (commandNumber >= 4) {
+                        commandNumber = 4;
                     } else {
                         commandNumber++;
                     };
